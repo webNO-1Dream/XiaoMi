@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>	
+		<meta charset="utf-8"/>	
+		<title>MyTitle</title>
+		<style>
+			body{text-align:center;}
+			canvas{background:yellow;}
+		</style>
+		
+	</head>
+	<body>		
+		 <h1>验证码</h1>
+		 <canvas id="c3"></canvas>
+		 <script>
+				//1,创建两个变量保存验证码的宽高
+					var w=120;
+					var h=30;
+				//2,将变量赋值
+				c3.width=w;
+				c3.height=h;
+				var ctx=c3.getContext("2d");
+				function rn(min,max){
+					//获取指定范围的随机数
+					var n= Math.random()*(max-min)+min;
+					return Math.floor(n);
+				}
+				function rc(min,max){
+					var r=rn(min,max);
+					var g=rn(min,max);
+					var b=rn(min,max);
+					return `rgb(${r},${g},${b})`;
+				}
+			//填充背景		 
+				ctx.fillStyle=rc(180,230);
+				ctx.fillRect(0,0,w,h);
+				//随机文字
+				var pool="ABCDEFGHIJKLMNOPQRSTUXWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				var str="";
+				for(var i=0;i<4;i++){
+					var index=Math.floor(Math.random()*pool.length);
+					str+=pool[index]+" ";
+				}
+				ctx.font="30px SimHei";
+				ctx.fillStyle=rc(80,180);
+				ctx.textBaseline="top";
+				ctx.fillText(str,5,0);
+				//干扰线
+				for (var i=0;i<6 ;i++ ){
+					 ctx.strokeStyle=rc(0,255);
+					 ctx.beginPath();
+					 ctx.moveTo(rn(0,w),rn(0,h));
+					 ctx.lineTo(rn(0,w),rn(0,h));
+					 ctx.stroke();
+				}
+				//干扰点
+				for (var i=0;i<50 ;i++ ){
+					 ctx.fillStyle=rc(0,255);
+					 ctx.beginPath();
+					 ctx.arc(rn(0,w),rn(0,h),1,0,2*Math.PI)
+					 ctx.fill();
+				}
+		 </script>
+	</body>
+</html>
+
+
+
+
+

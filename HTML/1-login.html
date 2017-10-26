@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,
+		minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>小米账号 - 登录</title>
+  <link rel="shortcut icon" href="../res/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../CSS/0-common.css">
+  <link rel="stylesheet" href="../CSS/1-login.css">
+</head>
+<body>
+<!-- 1,页头 -->
+<header>
+  <div id=logo>
+  </div>
+</header>
+<!-- 2，主体 -->
+<section>
+  <div id=bgImg>
+  </div>
+  <!-- 账号密码登录表单 -->
+  <form action="#" id="login-form" class="bigZindex">
+    <div id=login>
+      <ul>
+        <li>
+          <a href="#" class="bright">账号登录</a>
+          <span>|</span>
+          <a href="#" id="login-by-code">扫码登录</a>
+        </li>
+        <li>
+          <input type="text" id="uname"
+                 value="" placeholder="邮箱/手机号码/小米账号">
+        </li>
+        <li>
+          <input type="password" id="upwd" placeholder="密码" value="">
+        </li>
+        <li>
+          <button><a id="btn1" href="#">立即登陆</a></button>
+        </li>
+        <li>
+          <a href="#" alt="提示">注册小米账号</a>
+          <span>|</span>
+          <a href="#">忘记密码？</a>
+        </li>
+      </ul>
+      <div id=login-other>
+        <h2> 其他方式登录 </h2>
+        <div class=login-link>
+          <a href="#" class="other-link">
+            <i class="login-qq"></i>
+          </a>
+          <a href="#" class="other-link ">
+            <i class="login-wBlog"></i>
+          </a>
+          <a href="#" class="other-link">
+            <i class="login-pay"></i>
+          </a>
+          <a href="#" class="other-link ">
+            <i class="login-wChart"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- 扫码登录表单 -->
+  <form action="#" id="code-login-form">
+    <div id=code-login>
+      <div>
+        <a href="#" id="login-by-id">账号登录</a>
+        <span>|</span>
+        <a href="#" class="bright">扫码登录</a>
+      </div>
+      <div>
+      </div>
+      <div>
+        <p>使用<span>小米商城APP</span>扫一扫 </p>
+        <p>请打开「设置 > 小米帐号 > 右上角扫一扫」扫码登录	</p>
+      </div>
+    </div>
+  </form>
+</section>
+<!-- 3，页脚 -->
+<footer>
+  <div id=foot>
+    <p>
+      <a href="#">简体</a> |
+      <a href="#">繁体</a> |
+      <a href="#">English</a>	|
+      <a href="#">常见问题</a>
+    </p>
+    <p>
+      小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-
+      <img src="../res/img/login/ghs.png"> 京ICP证110507号
+    </p>
+  </div>
+</footer>
+<script>
+  //获取两种登录表单的id
+  var form1=document.getElementById("login-form");
+  var form2=document.getElementById("code-login-form");
+  //定义函数add_class()，判断调用它的元素是否有指定class名，有就去掉，没有就加上
+  function add_class(form_id){
+    if(form_id.className=="bigZindex"){
+      form_id.className="";
+    }else if(form_id.className==""){
+      form_id.className="bigZindex";
+    }
+  }
+  //为用户点击登录的方式绑定单击事件，
+  document.getElementById("login-by-id").onclick=function(){
+    add_class(form1);
+    add_class(form2);
+    //调用两次，确保选择的登录方式的表单具有指定class
+  }
+  document.getElementById("login-by-code").onclick=function(){
+    add_class(form1);
+    add_class(form2);
+    //调用两次，确保选择的登录方式的表单具有指定class
+  }
+</script>
+<script src="../JS/jquery-3.2.1.js"></script>
+<script src="../JS/1-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+/*初始布局
+	header{
+		height:98px;
+		width:100%;
+		background:pink;
+	}
+	section{
+		height:588px;
+		width:100%;
+		background:lightblue;
+	}
+	footer{
+		min-height:100px;
+		width:100%;
+		background:gray;
+	}	
+*/
+/*具体布局*/
+	/* 1、页面头部 header */
+		header{
+			height:98px;
+			width:100%;
+			}
+		header>#logo{
+			height:98px;
+			width:86%;
+			margin:0 auto;	
+			background: url("../res/img/login/mistore_logo.png") no-repeat ;
+		}
+	/* 2、主体部分 section */
+		/* 2.1，背景图 register-bgground-1.png*/
+			section{
+				height:588px;
+				width:100%;
+				position:relative;
+			}
+			section>#bgImg{
+				height:588px;
+				width:100%;
+				background: url("../res/img/login/register-bgground-1.png") no-repeat center;
+				
+			}
+		/* 2.2，设置class为‘bigZindex’的表单的堆叠顺序z-index的数值 */
+			section .bigZindex{
+				z-index:10;
+			}
+		/* 2.3，账号密码方式登录表单 */		
+			#login-form,#code-login-form{ /*两个表单共同样式*/
+				width:400px;
+				height:524px;			
+				position:absolute;
+				top:35px;
+				right:150px;
+				background:white;
+			}
+			#login,#code-login-form>#code-login{/*两个表单共同样式*/
+				margin:0 auto;
+				text-align:center;
+				width:90%;
+			}
+			#login-by-code:hover,#login-by-id:hover{
+				color: #ff6700;
+			}
+			#login-form>#login .bright,#code-login-form>#code-login div:nth-child(1) .bright{ /*两个表单共同样式*/
+				color: #ff6700;
+			}
+			#login>ul>li:nth-child(1),#code-login-form>#code-login div:nth-child(1){ /*两个表单共同样式*/
+				display:flex;
+				justify-content:space-around;
+				font-size:24px;
+				font-weight:normal;
+				color:green;
+				font-family:arial,"Hiragino Sans GB","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+				margin:25px auto;
+			}
+			#login>ul>li:not(:nth-child(1))>input{
+				width:100%;
+				height:50px;
+				margin:6px auto;
+				box-sizing:border-box;
+				border:1px solid #d0d0d0;
+				opacity:0.6;
+				box-shadow:none;
+				outline:medium;
+				padding-left:8px;
+			}
+			#login>ul>li:nth-child(4)>button{
+				width:100%;
+				height:50px;
+				border:none;
+				outline:medium;
+				margin-top:15px;						
+				font-size:20px;
+				color:white;
+				background:#ff6700;
+			}
+			#login>ul>li:nth-child(4)>button>a{
+				color:white;
+			}
+			#login>ul>li:last-child{
+				font-size:14px;
+				margin:20px auto;
+			}
+			#login-other{
+				position:relative;
+				top:90px;
+			}
+			#login-other>h2{
+				font-size:14px;
+				font-weight:normal;
+				color: #bbb;		
+				font-family:arial,"Hiragino Sans GB","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+			}
+			#login-other>h2:before,#login-other>h2:after{
+					content:"";
+					display:inline-block;
+					width:32%;
+					height:1px;
+					margin-bottom:3px;
+					background:#bbb;
+			}
+			#login-other>.login-link{
+				display:flex;
+				justify-content:center;
+				height:37px;
+				margin:15px auto;
+			}
+			#login-other>.login-link .other-link{
+				width:30px;
+				height:30px;
+				margin:0 15px;
+				border-radius:50%;
+				background:#bbb;
+			}
+			#login-other>.login-link .other-link>i{
+				display:block;
+				width:19px;
+				height:19px;
+				margin:5px auto;
+							
+			}
+			#login-other>.login-link .login-qq{	
+				background:url("../res/img/login/icons_type.png");
+				background-position:88px 0px;
+			} 
+			#login-other>.login-link .login-wBlog{
+				background:url("../res/img/login/icons_type.png");
+				background-position:69px 0px; 
+			} 
+			#login-other>.login-link .login-pay{
+				background:url("../res/img/login/icons_type.png");
+				background-position:50px 1px;
+			} 
+			#login-other>.login-link .other-link .login-wChart{
+				width:23px;
+				height:18px;			
+				background:url("../res/img/login/icons_type.png");
+				background-position:23px 0px;
+			} 
+			#login-other>.login-link>a:nth-child(1):hover{
+				background-color:#1874CD;
+			}
+			#login-other>.login-link>a:nth-child(2):hover{
+				background-color:#CD2626;
+			}
+			#login-other>.login-link>a:nth-child(3):hover{
+				background-color:#1C86EE;
+			}
+			#login-other>.login-link>a:nth-child(4):hover{
+				background-color:green;
+			}
+		/* 2.4，扫码登录表单*/
+			#code-login-form>#code-login div:nth-child(1){
+				display:flex;
+				justify-content:space-around;
+				font-size:24px;
+				font-weight:normal;
+				color:green;
+				font-family:arial,"Hiragino Sans GB","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+				margin:25px auto;				
+			}
+			#code-login-form>#code-login div:nth-child(2){
+				width:182px;
+				height:182px;
+				background:url("../res/img/login/code-login.png");
+				background-size:cover;
+				background-position:center;
+				margin:120px auto 20px;
+			}
+			#code-login-form>#code-login div:last-child p{
+				font-size:15px;
+				opacity:0.9;
+				margin:5px auto;
+			}
+			#code-login-form>#code-login div:last-child p span{
+				color:#ff6700;
+			}
+	/* footer */
+		footer{
+			position:relative;
+			min-height:150px;
+			width:100%;
+		}
+		footer>#foot{
+			width:100%;
+			position:absolute;
+			bottom:20px;
+		}
+		footer>#foot p{
+			text-align:center;
+			font-size:15px;
+			margin:20px auto;
+		}
+		footer>#foot p a{
+			opacity:1.0;
+		}
+		footer>#foot p>a:hover{
+			opacity:1.0;
+			color:black;
+		}
+
+
+
+
+
+
